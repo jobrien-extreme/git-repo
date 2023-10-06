@@ -165,7 +165,7 @@ if __name__ == "__main__":
 #
 REPO_URL = os.environ.get("REPO_URL", None)
 if not REPO_URL:
-    REPO_URL = "https://gerrit.googlesource.com/git-repo"
+    REPO_URL = "https://github.com/jobrien-extreme/git-repo"
 REPO_REV = os.environ.get("REPO_REV")
 if not REPO_REV:
     REPO_REV = "stable"
@@ -1289,7 +1289,7 @@ class Requirements(object):
 
     @classmethod
     def from_data(cls, data):
-        comment_line = re.compile(rb"^ *#")
+        comment_line = re.compile(br"^ *#")
         strip_data = b"".join(
             x for x in data.splitlines() if not comment_line.match(x)
         )
